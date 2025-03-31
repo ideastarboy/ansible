@@ -1,0 +1,16 @@
+---
+- name: Deploy ecommerce web App
+  hosts: n2
+  become: yes
+   
+  tasks:
+    - name: Install git
+      yum:
+        name: git
+        state: present
+
+    - name: host code
+      git:
+        repo: https://github.com/CeeyIT-Solutions/food3.git
+        dest: /var/www/html/
+...
